@@ -1,6 +1,11 @@
+"use client";
 import Image from "next/image";
 import { Button } from "../_components/ui/button";
-import { LogIn } from "lucide-react";
+import { Github } from "lucide-react";
+
+import { signIn } from "next-auth/react";
+import React from "react";
+import { SignIn } from "@clerk/nextjs";
 
 const LoginPage = () => {
   return (
@@ -21,9 +26,17 @@ const LoginPage = () => {
             para monitorar suas movimentações, e oferecer insights
             personalizados, facilitando o controle do seu orçamento.
           </p>
-          <Button variant={"outline"} className="h-12 w-full">
-            <LogIn className="mr-2" />
-            Fazer login ou criar conta
+          <Button
+            variant={"outline"}
+            className="h-12 w-full"
+            onClick={() =>
+              signIn("github", {
+                callbackUrl: "/dashboard",
+              })
+            }
+          >
+            <Github className="mr-2" />
+            Fazer login com o Github
           </Button>
         </div>
       </div>

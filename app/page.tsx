@@ -1,15 +1,13 @@
-import { Avatar, AvatarFallback, AvatarImage } from "./_components/ui/avatar";
+import Link from "next/link";
+import { Button } from "./_components/ui/button";
 
 export default function Home() {
   return (
-    <div className="align flex justify-center font-bold text-blue-950">
-      {/*ESquerda*/}
-      {/*Direita*/}
-      <div className="flex flex-row gap-5">
-        <Avatar>
-          <AvatarImage src="https://github.com/sjunqueira.png" />
-          <AvatarFallback>SJ</AvatarFallback>
-        </Avatar>
+    <div className="flex justify-center font-bold text-blue-950">
+      <div>
+        <Button asChild>
+          <Link href="/login">Eu sou um botão</Link>
+        </Button>
       </div>
     </div>
   );

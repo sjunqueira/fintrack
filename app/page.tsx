@@ -1,13 +1,17 @@
 // import Link from "next/link";
 // import { Button } from "./_components/ui/button";
 
+import Link from "next/link";
+import { Button } from "./_components/ui/button";
+
 export default function Home() {
   return (
-    <div className="flex justify-center font-bold text-blue-950">
+    <div className="flex h-full items-center justify-center font-bold text-white">
       <div>
-        {/* <Button> */}
-        <p>Teste</p>
-        {/* </Button> */}
+        <p>Seja bem vindo</p>
+        <Button className="m-5">
+          <Link href={"/login"}>Login</Link>
+        </Button>
       </div>
     </div>
   );

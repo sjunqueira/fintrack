@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Button } from "../_components/ui/button";
 import { Github } from "lucide-react";
 
-import { signIn } from "next-auth/react";
+import { SignIn } from "../_components/signin";
 
 import React from "react";
 
@@ -26,15 +26,7 @@ const LoginPage = () => {
             para monitorar suas movimentações, e oferecer insights
             personalizados, facilitando o controle do seu orçamento.
           </p>
-          <Button
-            variant={"outline"}
-            className="h-12 w-full"
-            onClick={() =>
-              signIn("github", {
-                callbackUrl: "/dashboard",
-              })
-            }
-          >
+          <Button variant={"outline"} className="h-12 w-full" onClick={SignIn}>
             <Github className="mr-2" />
             Fazer login com o Github
           </Button>

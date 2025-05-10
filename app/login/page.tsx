@@ -4,8 +4,8 @@ import { Button } from "../_components/ui/button";
 import { Github } from "lucide-react";
 
 import { signIn } from "next-auth/react";
+
 import React from "react";
-import { SignIn } from "@clerk/nextjs";
 
 const LoginPage = () => {
   return (

@@ -3,11 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "dotenv -e .env -- next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky"
+    "prepare": "husky",
+    "services": "docker",
+    "db:migrate": "dotenv -e .env -- prisma migrate dev",
+    "db:generate": "dotenv -e .env -- prisma generate",
+    "build:prod": "dotenv -e .env.production -- next build",
+    "db:deploy": "dotenv -e .env.production -- prisma migrate deploy"
   },
   "dependencies": {
     "@prisma/client": "^5.21.1",
@@ -16,6 +21,7 @@
     "@radix-ui/react-slot": "^1.2.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "dotenv": "^16.5.0",
     "lucide-react": "^0.508.0",
     "next": "15.3.2",
     "next-auth": "^5.0.0-beta.27",
@@ -31,6 +37,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.21",
+    "dotenv-cli": "^8.0.0",
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
     "husky": "^9.1.6",

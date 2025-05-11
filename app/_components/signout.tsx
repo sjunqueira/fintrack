@@ -2,5 +2,5 @@
 import { signOut } from "next-auth/react";
 
 export function SignOut() {
-  return signOut({ redirectTo: "/admin" });
+  return signOut({ redirectTo: "/login" });
 }

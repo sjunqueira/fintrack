@@ -6,7 +6,11 @@ const Header = () => {
   return (
     <div>
       <div className="m-5 mr-10 ml-10 flex h-8 justify-between">
-        <Image src="logo.svg" alt="financeai" width={174} height={39}></Image>
+        <div>
+          <Link href={"/"}>
+            <Image src="logo.svg" alt="financeai" width={174} height={39} />
+          </Link>
+        </div>
         <div className="flex gap-3">
           <Button variant={"ghost"}>
             <Link href={"/"}>Home</Link>

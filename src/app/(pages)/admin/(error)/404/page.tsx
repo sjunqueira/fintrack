@@ -1,4 +1,4 @@
-import { Button } from "@/app/_components/ui/button";
+import { Button } from "@/src/app/_components/ui/button";
 import Link from "next/link";
 
 const Error401 = () => {

@@ -1,15 +1,15 @@
 "use client";
 import Image from "next/image";
-import { Button } from "../_components/ui/button";
+import { Button } from "../../_components/ui/button";
 import { Github } from "lucide-react";
 
-import { SignIn } from "../_components/signin";
+import { SignIn } from "../../_components/signin";
 
 import React from "react";
-import GoogleLogo from "../_components/ui/google-logo";
-import { Input } from "../_components/ui/input";
-import { Separator } from "../_components/ui/separator";
-import Header from "../_components/header";
+import GoogleLogo from "../../_components/ui/google-logo";
+import { Input } from "../../_components/ui/input";
+import { Separator } from "../../_components/ui/separator";
+import Header from "../../_components/header";
 
 const LoginPage = () => {
   return (

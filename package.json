@@ -8,11 +8,16 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky",
-    "services": "docker",
     "db:migrate": "dotenv -e .env -- prisma migrate dev",
     "db:generate": "dotenv -e .env -- prisma generate",
     "build:prod": "dotenv -e .env.production -- next build",
-    "db:deploy": "dotenv -e .env.production -- prisma migrate deploy"
+    "db:deploy": "dotenv -e .env.production -- prisma migrate deploy",
+    "prisma:generate": "prisma generate --schema=infra/prisma/schema.prisma",
+    "services": "docker compose -f ./infra/docker-compose.yaml up -d",
+    "services:down": "docker compose -f ./infra/docker-compose.yaml down"
+  },
+  "prisma": {
+    "schema": "infra/prisma/schema.prisma"
   },
   "dependencies": {
     "@prisma/client": "^5.21.1",

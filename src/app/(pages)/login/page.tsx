@@ -10,8 +10,13 @@ import GoogleLogo from "../../_components/ui/google-logo";
 import { Input } from "../../_components/ui/input";
 import { Separator } from "../../_components/ui/separator";
 import Header from "../../_components/header";
+import { signIn } from "next-auth/react";
 
 const LoginPage = () => {
+  const handleCredentialsSignIn = (formData: FormData) => {
+    console.log("TEste");
+    signIn("credentials", formData);
+  };
   return (
     <div className="flex flex-col">
       <Header />
@@ -34,11 +39,18 @@ const LoginPage = () => {
               para monitorar suas movimentações, e oferecer insights
               personalizados, facilitando o controle do seu orçamento.
             </p>
-            <div className="flex w-full flex-col justify-center gap-4">
-              <Input type="email" placeholder="Email" />
-              <Input type="password" placeholder="Password" />
-              <Button onClick={SignIn}>Fazer login</Button>
-            </div>
+            <form
+              action={handleCredentialsSignIn}
+              className="flex w-full flex-col justify-center gap-4"
+            >
+              <Input type="email" placeholder="Email" id="credentials-email" />
+              <Input
+                type="password"
+                placeholder="Password"
+                id="credentials-password"
+              />
+              <Button>Fazer login</Button>
+            </form>
             <Separator className="mt-4 mb-4" />
             <div className="flex w-full flex-col justify-center gap-4">
               <div className="text-muted-foreground text-center text-sm">
@@ -47,7 +59,7 @@ const LoginPage = () => {
               <Button
                 variant={"outline"}
                 className="w-50% h-12"
-                onClick={SignIn}
+                onClick={() => SignIn("Github")}
               >
                 <Github className="mr-2" />
                 Fazer login com o Github
@@ -55,7 +67,7 @@ const LoginPage = () => {
               <Button
                 variant={"default"}
                 className="w-50% h-12"
-                onClick={SignIn}
+                onClick={() => SignIn("Google")}
               >
                 <GoogleLogo width={20} height={20} />
                 Fazer login com o Google
